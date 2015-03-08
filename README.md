@@ -1,9 +1,9 @@
-This is a Dockerfile setup for mylar - https://github.com/evilhero/mylar
+This is a Dockerfile setup for CherryMusic - http://www.fomori.org/cherrymusic/
 
 To run:
 
 ```
-docker run -d --name="mylar" -v /path/to/mylar/data:/config -v /path/to/downloads:/downloads -v /path/to/comics:/comics -v /etc/localtime:/etc/localtime:ro -p 8090:8090 pinion/docker-mylar
+docker run -d --name="cherrymusic" -v /path/to/config:/root/.config/cherrymusic -v /path/to/music:/music -v /etc/localtime:/etc/localtime:ro -p 8070:8070 pinion/cherrymusic
 ```
 
 Much donate: DR5dCKF8m5x8VWMtofpGoH4ghjNZYywgTU
