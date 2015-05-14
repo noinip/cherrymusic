@@ -15,11 +15,10 @@ RUN usermod -g 100 nobody
 # install dependencies for building cherrymusic
 #jon-severinsson's repo quit working for me :(
 #RUN add-apt-repository ppa:jon-severinsson/ffmpeg
-RUN apt-add-repository ppa:samrog131/ppa
+RUN apt-add-repository ppa:mc3man/trusty-media
 RUN apt-get update -qq
-RUN apt-get -y install ffmpeg-real python3-cherrypy3 imagemagick python-unidecode git mpg123 faad vorbis-tools flac imagemagick python-pip lame libmp3lame0
+RUN apt-get -y install ffmpeg python3-cherrypy3 imagemagick python-unidecode git mpg123 faad vorbis-tools flac imagemagick python-pip lame libmp3lame0
 RUN apt-get clean
-RUN ln -sf /opt/ffmpeg/bin/ffmpeg /usr/bin/ffmpeg
 RUN pip install cherrypy
 
 
