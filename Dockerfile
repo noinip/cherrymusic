@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.11
+FROM phusion/baseimage:0.9.16
 MAINTAINER pinion <pinion@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -12,11 +12,9 @@ CMD ["/sbin/my_init"]
 RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 
-RUN apt-get update -qq
-
 # install dependencies for building cherrymusic
 RUN add-apt-repository ppa:jon-severinsson/ffmpeg
-RUN apt-get update
+RUN apt-get update -qq
 RUN apt-get -y install ffmpeg python3-cherrypy3 imagemagick python-unidecode git mpg123 faad vorbis-tools flac imagemagick python-pip lame libmp3lame0
 RUN apt-get clean
 RUN pip install cherrypy
