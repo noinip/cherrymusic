@@ -6,4 +6,4 @@ To run:
 docker run -d --name="cherrymusic" -v /path/to/config:/root/.config/cherrymusic -v /path/to/music:/music -v /etc/localtime:/etc/localtime:ro -p 8070:8070 pinion/cherrymusic
 ```
 
-Much donate: DR5dCKF8m5x8VWMtofpGoH4ghjNZYywgTU
+
