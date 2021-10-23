@@ -23,7 +23,7 @@ RUN pip install cherrypy
 
 
 # download and install cherrymusic
-RUN git clone --branch master https://github.com/devsnd/cherrymusic.git /opt/cherrymusic
+RUN git clone --branch devel https://github.com/devsnd/cherrymusic.git /opt/cherrymusic
 RUN chown nobody:users /opt/cherrymusic
 RUN mkdir -p ~/.config/cherrymusic
 
