@@ -1,4 +1,7 @@
-FROM phusion/baseimage:focal-1.0.0
+# Issues with Jammy
+# the latest python3-full doesn't work. python3.10 seems to break something with json str encoding
+#FROM phusion/baseimage:jammy-1.0.1
+FROM phusion/baseimage:focal-1.2.0
 MAINTAINER pinion <pinion@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 # Set correct environment variables
@@ -8,9 +11,17 @@ CMD ["/sbin/my_init"]
 # Fix a Debianism of the nobody's uid being 65534
 RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
-# install dependencies for building cherrymusic
+# install dependencies for building/running cherrymusic
 RUN apt-get update -qq
-RUN apt-get -y install ffmpeg python3-cherrypy3 imagemagick git mpg123 faad vorbis-tools flac imagemagick lame libmp3lame0 python3-pip python3.9-full
+RUN apt-get -y install \
+ffmpeg \
+imagemagick \
+git \
+python3-pip \
+python3.8-full \
+python3-unidecode \
+imagemagick
+RUN apt-get -y install flac lame vorbis-tools
 RUN apt-get clean
 RUN pip install cherrypy
 # download and install cherrymusic
